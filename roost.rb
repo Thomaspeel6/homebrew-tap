@@ -5,41 +5,45 @@
 class Roost < Formula
   desc "Recap any past Claude Code session in 50ms"
   homepage "https://github.com/Thomaspeel6/roost"
-  version "0.1.0"
+  version "0.2.0"
   license "MIT"
 
   on_macos do
     if Hardware::CPU.intel?
-      url "https://github.com/Thomaspeel6/roost/releases/download/v0.1.0/roost_0.1.0_darwin_amd64.tar.gz"
-      sha256 "3746c039307f46c59b0fcd4c476d7474265b4222bd9d8491ad88ecb154ee845d"
+      url "https://github.com/Thomaspeel6/roost/releases/download/v0.2.0/roost_0.2.0_darwin_amd64.tar.gz"
+      sha256 "0562633d22dce9fb3bbf9556a1d2b76db415ea5f693b5030e36e87225e48d37e"
 
       define_method(:install) do
         bin.install "roost"
+        bin.install "roost-hook"
       end
     end
     if Hardware::CPU.arm?
-      url "https://github.com/Thomaspeel6/roost/releases/download/v0.1.0/roost_0.1.0_darwin_arm64.tar.gz"
-      sha256 "e0b62cb614e61737020d17c49b60d8f35b0c39cc6f41a1b1951a1d69cc447582"
+      url "https://github.com/Thomaspeel6/roost/releases/download/v0.2.0/roost_0.2.0_darwin_arm64.tar.gz"
+      sha256 "c07cad3d48ac9af103450f68e30e31c08deeb6708d2362b998f9533ee997f7f7"
 
       define_method(:install) do
         bin.install "roost"
+        bin.install "roost-hook"
       end
     end
   end
 
   on_linux do
     if Hardware::CPU.intel? && Hardware::CPU.is_64_bit?
-      url "https://github.com/Thomaspeel6/roost/releases/download/v0.1.0/roost_0.1.0_linux_amd64.tar.gz"
-      sha256 "66ba13ecb194cd654c5d1d4d551ce0b05d2b1c8bc1822eacc61b23c9a34df21c"
+      url "https://github.com/Thomaspeel6/roost/releases/download/v0.2.0/roost_0.2.0_linux_amd64.tar.gz"
+      sha256 "abe7ea31676ef7018c6ab73fdd4ead39fe7afa4f98cf5da10292c97f3da71625"
       define_method(:install) do
         bin.install "roost"
+        bin.install "roost-hook"
       end
     end
     if Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
-      url "https://github.com/Thomaspeel6/roost/releases/download/v0.1.0/roost_0.1.0_linux_arm64.tar.gz"
-      sha256 "e80f29cf7d15e34383436de786dd4f84658dd4932f6a786e65dd98b4f89ad4b1"
+      url "https://github.com/Thomaspeel6/roost/releases/download/v0.2.0/roost_0.2.0_linux_arm64.tar.gz"
+      sha256 "e0f19a80589e31017cd41bb2c12432f2084e7664c780da0af860fd75dec2fdf1"
       define_method(:install) do
         bin.install "roost"
+        bin.install "roost-hook"
       end
     end
   end
